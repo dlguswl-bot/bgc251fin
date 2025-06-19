@@ -34,18 +34,18 @@
       // 참고자료 목록
       const references = [
         {
-          title: 'Face Mesh Detection with ml5.js',
+          title: 'Hand Pose Detection with ml5.js',
           authors: ['Daniel Shiffman'],
           year: '2024',
           publisher: 'The Coding Train - YouTube',
-          url: 'https://www.youtube.com/watch?v=R5UZsIwPbJA',
+          url: 'https://www.youtube.com/watch?v=vfNHdVbE-l4&t=15s',
         },
         {
-          title: '250425a',
-          authors: ['Okazz'],
-          year: '2025',
-          publisher: 'OpenProcessing',
-          url: 'https://openprocessing.org/sketch/2625827',
+          title: '4.2: Many Particle Systems (Emitters!) - The Nature of Code',
+          authors: ['Daniel Shiffman'],
+          year: '2021',
+          publisher: 'The Coding Train - YouTube',
+          url: 'https://www.youtube.com/watch?v=wDYD3JVtOys&t=428s',
         },
       ];
       // ∧○○○○ [수정 필수] ○○○○∧
@@ -57,9 +57,8 @@
     <!-- ∨○○○○ [수정 필수] ○○○○∨ -->
     <!-- p5.js 라이브러리 로딩 -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.js"></script>
-    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
     <!-- 본인 스케치 로딩 -->
-    <script src="./sketches/BatBlood.js" defer></script>
+    <script src="./sketches/Batblood.js" defer></script>
     <script src="./sketches/particle.js" defer></script>
     <script src="./sketches/sketch.js" defer></script>
     <!-- ∧○○○○ [수정 필수] ○○○○∧ -->
@@ -68,10 +67,13 @@
     <main id="main">
       <!-- ∨○○○○ [수정 필수] ○○○○∨ -->
       <!-- 전체화면 여부 선택 -->
+      <audio controls>
+        <source src="" type="" />
+      </audio>
       <section
         id="section-canvas"
         class="section section--canvas canvas"
-        data-full-width="false"
+        data-full-width="true"
       >
         <!-- ∧○○○○ [수정 필수] ○○○○∧ -->
         <div class="container canvas__container">
@@ -127,9 +129,15 @@
           <div class="information__description">
             <!-- ∨○○○○ [수정 필수] ○○○○∨ -->
             <!-- 작품 설명 -->
+            <p>이 작품은 영화 '처키'를 모티브로 삼아</p>
             <p>
-              배경 톤을 정신없이 바뀌게 하고 흔들리게 설정함으로써 소름돋고
-              기묘한 분위기를 연출하였다. 화면 상단에는 "I'm 야구 방망이를
+              배경을 지속적으로 흔들리게 하고 정신없이 톤이 바뀌도록
+              구성함으로써 시각적 불안정감을 형성했다. 마우스에는 야구 방망이를
+              배치시켰고, particle 효과를 사용하여 마우스 클릭시 피가 터져
+              나오는 상황을 연출하였다.
+            </p>
+            <p>
+              사운드를 삽입하여 소름돋고 호러스러운 분위기를 더욱 가미시켰다.
             </p>
             <!-- ∧○○○○ [수정 필수] ○○○○∧ -->
           </div>

@@ -9,7 +9,7 @@ class BatBlood {
 
   emit(n) {
     if (frameCount - this.startFrame < this.duration) {
-      for (let i = 0; i < n; i++) {
+      for (let i = 0; i < n * 2; i++) {
         this.particles.push(new Particle(this.x, this.y));
       }
     }
