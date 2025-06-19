@@ -4,7 +4,7 @@ class BatBlood {
     this.y = y;
     this.particles = [];
     this.startFrame = frameCount;
-    this.duration = 20; // 시간 제한
+    this.duration = 40; // 시간 제한
   }
 
   emit(n) {

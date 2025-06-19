@@ -34,13 +34,6 @@
       // 참고자료 목록
       const references = [
         {
-          title: 'Hand Pose Detection with ml5.js',
-          authors: ['Daniel Shiffman'],
-          year: '2024',
-          publisher: 'The Coding Train - YouTube',
-          url: 'https://www.youtube.com/watch?v=vfNHdVbE-l4&t=15s',
-        },
-        {
           title: '4.2: Many Particle Systems (Emitters!) - The Nature of Code',
           authors: ['Daniel Shiffman'],
           year: '2021',
@@ -58,7 +51,7 @@
     <!-- p5.js 라이브러리 로딩 -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.js"></script>
     <!-- 본인 스케치 로딩 -->
-    <script src="./sketches/Batblood.js" defer></script>
+    <script src="./sketches/BatBlood.js" defer></script>
     <script src="./sketches/particle.js" defer></script>
     <script src="./sketches/sketch.js" defer></script>
     <!-- ∧○○○○ [수정 필수] ○○○○∧ -->
@@ -67,9 +60,31 @@
     <main id="main">
       <!-- ∨○○○○ [수정 필수] ○○○○∨ -->
       <!-- 전체화면 여부 선택 -->
-      <audio controls>
-        <source src="" type="" />
+      <audio id="bg-audio" autoplay muted loop>
+        <source src="bg-audio.mp3" type="audio/mpeg" />
+        <source src="bg-audio.m4a" type="audio/m4a" />
+        <source src="bg-audio.ogg" type="audio/ogg" />
       </audio>
+      <script>
+        window.addEventListener('DOMContentLoaded', () => {
+          const audio = document.getElementById('bg-audio');
+
+          audio.play().catch((e) => {
+            console.log('자동 재생 실패:', e);
+          });
+          const enableAudio = () => {
+            audio.muted = false;
+            audio.play().catch((e) => {
+              console.log('사용자 상호작용 후 재생 실패:', e);
+            });
+            window.removeEventListener('click', enableAudio);
+            window.removeEventListener('touchstart', enableAudio);
+          };
+
+          window.addEventListener('click', enableAudio);
+          window.addEventListener('touchstart', enableAudio);
+        });
+      </script>
       <section
         id="section-canvas"
         class="section section--canvas canvas"
@@ -129,15 +144,34 @@
           <div class="information__description">
             <!-- ∨○○○○ [수정 필수] ○○○○∨ -->
             <!-- 작품 설명 -->
-            <p>이 작품은 영화 '처키'를 모티브로 삼아</p>
             <p>
-              배경을 지속적으로 흔들리게 하고 정신없이 톤이 바뀌도록
-              구성함으로써 시각적 불안정감을 형성했다. 마우스에는 야구 방망이를
-              배치시켰고, particle 효과를 사용하여 마우스 클릭시 피가 터져
-              나오는 상황을 연출하였다.
+              이 작품은 영화 '처키'에서 영감을 받아, 익숙한 유희의 얼굴 아래
+              감춰진 섬뜩한 본능과 혼란의 심리를 시각적으로 재해석한 것이다.
+              화면 전체는 끊임없이 흔들리고, 예측 불가능하게 변화하는 색채의
+              흐름 속에 놓여 있다. 이 불안정한 배경은 단순한 시각적 효과를 넘어,
+              현실의 균열을 암시하며 관객의 지각을 교란한다.
             </p>
             <p>
-              사운드를 삽입하여 소름돋고 호러스러운 분위기를 더욱 가미시켰다.
+              화면 상단과 하단 중앙에는 “Hi, I'm Chucky. Wanna play?”와 “I'm
+              your friend till the end!”라는 영화 속 상징적인 대사가 붉은 톤으로
+              삽입되어, 서사의 몰입도를 더욱 높인다. 이 문장은 단순한 텍스트가
+              아니라, 마치 화면 속 캐릭터가 관객에게 직접 말을 거는 듯한
+              위화감을 조성한다.
+            </p>
+            <p>
+              마우스 커서는 야구 방망이 형태로 변형되어 사용자의 상호작용 자체가
+              위협적인 느낌을 주며, 클릭 시에는 파티클 효과를 통해 피가 튀는
+              연출이 구현된다. 이는 처키가 공격을 가하는 듯한 잔혹한 상상을
+              자극하며, 시각적으로 강렬한 인상을 남긴다.
+            </p>
+            <p>
+              작품에 삽입된 사운드는 남성의 섬뜩한 웃음소리로, 장면 전체에
+              기묘하고 불길한 분위기를 덧입힌다. 이 웃음은 단순한 효과음이 아닌,
+              마치 화면 밖 어딘가에서 관객을 지켜보는 존재의 숨소리처럼
+              느껴진다. 영상과 소리, 그리고 인터랙션이 하나로 결합되면서 관객은
+              이 불안한 장면 속에 스스로를 투영하게 된다. 그리하여 이 작품은
+              단순한 공포의 재현이 아니라, 불안의 감각을 시각·청각적으로
+              체험하게 하는 하나의 장치로 작동한다.
             </p>
             <!-- ∧○○○○ [수정 필수] ○○○○∧ -->
           </div>
