@@ -50,7 +50,7 @@ function draw() {
   //화면 테두리
   push();
   noFill();
-  stroke(200, 0, 0);
+  stroke(random(150, 255), 0, 0);
   strokeWeight(40);
   rect(0, 0, width, height);
   pop();
