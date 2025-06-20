@@ -47,6 +47,14 @@ function draw() {
   textAlign(CENTER, BOTTOM); // 아래 중앙 정렬
   text("🩸I'm your friend till the end!🩸", width / 2, height - 40); // 글씨 위치
 
+  //화면 테두리
+  push();
+  noFill();
+  stroke(200, 0, 0);
+  strokeWeight(40);
+  rect(0, 0, width, height);
+  pop();
+
   for (let batBlood of batBloods) {
     batBlood.emit(5);
     batBlood.show();
